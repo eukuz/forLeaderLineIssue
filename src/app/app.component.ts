@@ -25,6 +25,13 @@ export class AppComponent implements AfterViewInit {
       this.startingElement.nativeElement,
       this.endingElement.nativeElement,
     ));
+
+    let lineElements = document.querySelectorAll('body > .leader-line > g');
+    for (let i = 0; i < lineElements.length; i++) {
+      lineElements[i].addEventListener('click', function () {
+        console.log("line clicked")
+      }, false);
+    }
   }
 
   drop($event: any) {
